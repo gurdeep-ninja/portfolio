@@ -18,10 +18,11 @@ body {
 /* Main container for website */
 .flex-container {
   display:flex; /* Set display to flexbox */
+  flex-direction: column; /* Sets column layout */
 }
 
 /* Header styling */
-header {
+#heading-section {
   display:flex; /* Set display to flexbox */
   justify-content: space-between; /* Flex items evenly distributed (but first item pegged to start, last to end */
   width:var(--container-width); /* Fixed width */
@@ -58,4 +59,50 @@ h1,nav {
 	background-repeat: no-repeat;
 	background-size: contain;
 	padding: 40px 0 0 92px;
+}
+
+#hero {
+  width:var(--container-width); /* Fixed width */
+  height:300px;
+  margin:30px auto;/* Position the header center within parent container  */
+  background-image: url("../images/hero-banner.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position:relative
+}
+
+#hero > p {
+	position: absolute;
+	bottom: 1em;
+	right: 0;
+	display: block;
+	background-color: var(--theme-accent);
+	padding: 15px 5px 14px 30px;
+	font-size: 1.4em;
+}
+
+#about-card {
+	display: flex;
+	flex-grow: 1;
+	flex-shrink: 0;
+	width: var(--container-width);
+	margin: 0 auto;
+	margin-top: 30px;
+	border-top: 2px solid var(--theme-accent);
+	padding: 34px 20px 34px 0;
+  background-color: var(--theme-bg-color-secondary);
+}
+.about-card-title {
+	flex: 0 0 20%;
+	font-size: 60px;
+	text-align: right;
+	line-height: 40px;
+	padding-right: 26px;
+  border-right:2px solid var(--theme-accent);
+  margin-right:20px
+}
+
+.about-card-description p{
+  line-height: 1em;
+  margin-bottom:1em
 }
