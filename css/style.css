@@ -1,13 +1,31 @@
+/* Base styles are reset in ./reset.css */
+
+/* Set CSS variables to reuse throughout website */
 :root{
-  --theme-color: #218AFF;
-  --theme-bg-color: rgb(16,16,16);
-  --theme-bg-color-secondary: rgba(32,32,32,100)
+  --theme-color: #218AFF; /* Primary accent / font colour */
+  --theme-bg-color: rgb(16,16,16); /* Primary background colour */
+  --theme-bg-color-secondary: rgba(32,32,32,100); /* Secondary background colour */
+  --container-width:800px;/* Global default width for containers */
 }
 
+/* Set body styles */
 body {
-  margin: 0;
-  padding: 0;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   line-height: 1.5;
-  background-color: var(--theme-color);
+  background-color: var(--theme-bg-color);
+  color:#fff;
+}
+/* Main container for website */
+.flex-container {
+  display:flex; /* Set display to flexbox */
+}
+
+/* Header styling */
+header {
+  display:flex; /* Set display to flexbox */
+  justify-content: space-between; /* Flex items evenly distributed (but first item pegged to start, last to end */
+  width:var(--container-width); /* Fixed width */
+  margin:0 auto;/* Position the header center within parent container  */
+  align-items: center; /* Flex items are aligned center */
+
 }
