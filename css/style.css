@@ -2,10 +2,10 @@
 
 /* Set CSS variables to reuse throughout website */
 :root{
-  --theme-color: #218AFF; /* Primary accent / font colour */
+  --theme-accent: #218AFF; /* Primary accent / font colour */
   --theme-bg-color: rgb(16,16,16); /* Primary background colour */
-  --theme-bg-color-secondary: rgba(32,32,32,100); /* Secondary background colour */
-  --container-width:800px;/* Global default width for containers */
+  --theme-bg-color-secondary: rgb(32,32,32); /* Secondary background colour */
+  --container-width: 960px;/* Global default width for containers */
 }
 
 /* Set body styles */
@@ -27,5 +27,35 @@ header {
   width:var(--container-width); /* Fixed width */
   margin:0 auto;/* Position the header center within parent container  */
   align-items: center; /* Flex items are aligned center */
+  background-color: var(--theme-bg-color-secondary)
 
+}
+
+/* Navigation menu styling */
+#navigation {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#navigation li {
+	flex-shrink: 0;
+	padding: 1em 0;
+	cursor: pointer;
+	flex-grow: 1;
+	text-align: center;
+}
+
+#navigation li:hover{
+  background-color:var(--theme-accent)
+}
+h1,nav {
+  flex:1
+}
+
+.logo {
+	background-image: url("../images/logo.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	padding: 40px 0 0 92px;
 }
