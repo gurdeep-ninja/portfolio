@@ -15,6 +15,11 @@ body {
   background-color: var(--theme-bg-color);
   color:#fff;
 }
+
+a {
+  color:#fff;
+  text-decoration: none;
+}
 /* Main container for website */
 .flex-container {
   display:flex; /* Set display to flexbox */
@@ -41,7 +46,6 @@ body {
 
 #navigation li {
 	flex-shrink: 0;
-	padding: 1em 0;
 	cursor: pointer;
 	flex-grow: 1;
 	text-align: center;
@@ -49,6 +53,11 @@ body {
 
 #navigation li:hover{
   background-color:var(--theme-accent)
+}
+
+#navigation li a {
+  display:block;
+  padding: 1em 0;
 }
 
 h1,nav {
@@ -82,7 +91,7 @@ h1,nav {
 	font-size: 1.4em;
 }
 
-#about-section, #portfolio-section {
+#about-section, #portfolio-section,#contact-section {
 	display: flex;
 	flex-grow: 1;
 	flex-shrink: 0;
@@ -126,11 +135,14 @@ h1,nav {
   min-height:200px;
   background-size:contain;
   position: relative;
+
 }
 
 .portfolio-item img {
   max-width:100%;
-  opacity: 0.2;
+  opacity: 0.7;
+  height:100%;
+  transition: all 0.2s ease-in-out;
 }
 
 .portfolio-item:hover img {
@@ -155,11 +167,24 @@ h1,nav {
 }
 
 .portfolio-info {
-  position:absolute;
-  color:black;
-  background-color: var(--theme-accent);
-  bottom:2em;
-  right:0;
-  text-align: right;
-  width:50%
+	position: absolute;
+	background-color: var(--theme-bg-color);
+	bottom: 2em;
+	right: 0;
+	text-align: right;
+	width: 50%;
+	color: #fff;
+	padding: 20px;
+	opacity: 0.96;
+}
+
+.portfolio-item:nth-child(n+2) .portfolio-info {
+  width:75%
+}
+
+#contact-section .contact-details{
+  display:flex;
+  justify-content: space-around;
+  flex:1;
+  align-items:center
 }
