@@ -8,6 +8,11 @@
   --container-width: 960px;/* Global default width for containers */
 }
 
+/* Adds smooth scrolling for anchor links */
+html {
+	scroll-behavior: smooth;
+}
+
 /* Set body styles */
 body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -16,9 +21,10 @@ body {
   color:#fff;
 }
 
+/* Default link style */
 a {
   color:#fff;
-  text-decoration: none;
+  text-decoration: none; /* Removes underline from links */
 }
 /* Main container for website */
 .flex-container {
@@ -40,13 +46,13 @@ a {
 /* Navigation menu styling */
 #navigation {
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	justify-content: space-between; /* Position flex items horizontally */
+	align-items: center; /* Position flex items vertically */
 }
 
+/* Target each li item for navigation */
 #navigation li {
-	flex-shrink: 0;
-	cursor: pointer;
+	flex-shrink: 0; /* Prevent flex items from shrinking */
 	flex-grow: 1;
 	text-align: center;
 }
@@ -60,7 +66,7 @@ a {
   padding: 1em 0;
 }
 
-h1,nav {
+.logo, nav {
   flex:1
 }
 
@@ -102,14 +108,18 @@ h1,nav {
 	padding: 34px 20px 34px 0;
   background-color: var(--theme-bg-color-secondary);
 }
-.about-card-title {
-	flex: 0 0 20%;
+
+#about-section{
+  align-items:center
+}
+.section-title {
 	font-size: 60px;
 	text-align: right;
-	line-height: 40px;
-	padding-right: 26px;
-  border-right:2px solid var(--theme-accent);
-  margin-right:20px
+	line-height: 1em;
+	padding: 0 15px;
+	border-right: 2px solid var(--theme-accent);
+	margin-right: 20px;
+	width: 254px;
 }
 
 .about-card-description p{
@@ -187,4 +197,9 @@ h1,nav {
   justify-content: space-around;
   flex:1;
   align-items:center
+}
+
+
+.about-card-description,#portfolio-items,.contact-details {
+  flex:1
 }
