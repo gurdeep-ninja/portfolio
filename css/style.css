@@ -260,9 +260,8 @@ a {
 
   #portfolio-items {
     grid-template-columns: 1fr 1fr ; /* Specifying the width & number of columns */
-    grid-template-rows: 1fr 1fr 1fr 1fr; /* Specifying the height & number of rows */
+    grid-template-rows: 1fr; /* Specifying the height & number of rows */
     grid-template-areas: /* Defining the grid areas we want to use 2 columns / 4 rows*/
-      "portfolio-item1 portfolio-item1"
       "portfolio-item1 portfolio-item1"
       "portfolio-item2 portfolio-item3"
       "portfolio-item4 portfolio-item5";
