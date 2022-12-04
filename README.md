@@ -17,6 +17,3 @@ Simply clone or download this project as a zip file & extract to your websites r
 
 ## Technologies
 ![HTML](https://img.shields.io/badge/html-25%25-red) ![CSS](https://img.shields.io/badge/css-75%25-blue)
-
-## To Do
-Optimise the site images - a majority have a very large payload.
