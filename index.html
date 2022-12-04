@@ -11,96 +11,98 @@
 </head>
 
 <body>
-  <div class="flex-container">
+  <div class="container flex">
     <!-- main logo / nav -->
-    <header id="heading-section">
+    <header id="heading-section" class="flex">
       <h1 class="logo"><span>Website</span> Developer</h1>
       <nav>
-        <ul id="navigation">
+        <ul id="navigation" class="flex">
           <li><a href="#about-section">About me</a></li>
           <li><a href="#portfolio-section">Work</a></li>
           <li><a href="#contact-section">Contact me</a></li>
         </ul>
       </nav>
     </header>
-    <div id="hero-section">
-      <p>I'm a website developer based in London, UK </p>
-    </div>
-    <section id="about-section">
-      <div class="section-title">
-        <h2>About me</h2>
+    <main>
+      <div id="hero-section">
+        <p>I'm a website developer based in London, UK </p>
       </div>
-      <div class="about-card-description">
-        <p>I'm Multimedia Technology & Design graduate from Brunel University - there I dabbled into all sorts of cool
-          stuff such as web, graphic, multimedia, 3D animation & programming.</p>
+      <section id="about-section" class="flex">
+        <div class="section-title">
+          <h2>About me</h2>
+        </div>
+        <div class="about-card-description">
+          <p>I'm Multimedia Technology & Design graduate from Brunel University - there I dabbled into all sorts of cool
+            stuff such as web, graphic, multimedia, 3D animation & programming.</p>
 
-        <p>I have a keen enthusiasm for all things tech related - from building computers, working on small electronic
-          projects to tinkering with Linux server configurations.</p>
-      </div>
-    </section>
-    <section id="portfolio-section">
-      <div class="section-title">
-        <h2>My work</h2>
-      </div>
-      <div id="portfolio-items">
-        <div class="portfolio-item portfolio-item1">
-          <a href="https://www.google.co.uk">
-            <img src="images/portfolio-item1.jpg">
-            <div class="portfolio-info">
-              <h3>Google</h3>
-              <p>I worked on the CSS</p>
-            </div>     
-          </a>
+          <p>I have a keen enthusiasm for all things tech related - from building computers, working on small electronic
+            projects to tinkering with Linux server configurations.</p>
         </div>
-        <div class="portfolio-item portfolio-item2">
-          <a href="https://www.yahoo.com">
-            <img src="images/portfolio-item2.jpg">
-            <div class="portfolio-info">
-              <h3>Yahoo</h3>
-              <p>I made Yahoo.com</p>
-            </div>     
-          </a>
+      </section>
+      <section id="portfolio-section" class="flex">
+        <div class="section-title">
+          <h2>My work</h2>
         </div>
-        <div class="portfolio-item portfolio-item3">
-          <a href="https://www.amazon.co.uk">
-            <img src="images/portfolio-item3.jpg">
-            <div class="portfolio-info">
-              <h3>Amazon</h3>
-              <p>I worked on the CSS grid layout</p>
-            </div>     
-          </a>
+        <div id="portfolio-items">
+          <div class="portfolio-item portfolio-item1">
+            <a href="https://www.google.co.uk">
+              <img src="images/portfolio-item1.jpg">
+              <div class="portfolio-info">
+                <h3>Google</h3>
+                <p>I worked on the CSS</p>
+              </div>
+            </a>
+          </div>
+          <div class="portfolio-item portfolio-item2">
+            <a href="https://www.yahoo.com">
+              <img src="images/portfolio-item2.jpg">
+              <div class="portfolio-info">
+                <h3>Yahoo</h3>
+                <p>I made Yahoo.com</p>
+              </div>
+            </a>
+          </div>
+          <div class="portfolio-item portfolio-item3">
+            <a href="https://www.amazon.co.uk">
+              <img src="images/portfolio-item3.jpg">
+              <div class="portfolio-info">
+                <h3>Amazon</h3>
+                <p>I worked on the CSS grid layout</p>
+              </div>
+            </a>
+          </div>
+          <div class="portfolio-item portfolio-item4">
+            <a href="https://bitcoin.org">
+              <img src="images/portfolio-item4.jpg">
+              <div class="portfolio-info">
+                <h3>Cryptocurrency</h3>
+                <p>I made the blockchain</p>
+              </div>
+            </a>
+          </div>
+          <div class="portfolio-item portfolio-item5">
+            <a href="https://www.currys.co.uk">
+              <img src="images/portfolio-item5.jpg">
+              <div class="portfolio-info">
+                <h3>Currys</h3>
+                <p>Wireframes to HTML/CSS</p>
+              </div>
+            </a>
+          </div>
         </div>
-        <div class="portfolio-item portfolio-item4">
-          <a href="https://bitcoin.org">
-            <img src="images/portfolio-item4.jpg">
-            <div class="portfolio-info">
-              <h3>Cryptocurrency</h3>
-              <p>I made the blockchain</p>
-            </div>     
-          </a>
-        </div>
-        <div class="portfolio-item portfolio-item5">
-          <a href="https://www.currys.co.uk">
-            <img src="images/portfolio-item5.jpg">
-            <div class="portfolio-info">
-              <h3>Currys</h3>
-              <p>Wireframes to HTML/CSS</p>
-            </div>     
-          </a>
-        </div>
-      </div>
-    </section>
-    <footer id="contact-section">
+      </section>
+    </main>
+    <section id="contact-section" class="flex">
       <div class="section-title">
         <h2>Contact Info</h2>
-      </div>      
+      </div>
 
-      <ul class="contact-details">
-          <li><strong>Email:</strong> <a href="mailto:example@gmail.com">example@gmail.com</a></li>
-          <li><strong>Github:</strong> <a href="https://github.com/gurdeep-ninja/">My Github</a></li>
-          <li><strong>Tel:</strong> <a href="tel:0800 000 000">0800 000 000</a></li>
+      <ul class="contact-details flex">
+        <li><strong>Email:</strong> <a href="mailto:example@gmail.com">example@gmail.com</a></li>
+        <li><strong>Github:</strong> <a href="https://github.com/gurdeep-ninja/">My Github</a></li>
+        <li><strong>Tel:</strong> <a href="tel:0800 000 000">0800 000 000</a></li>
       </ul>
-    </footer>    
+    </section>
   </div>
 </body>
 

@@ -1,47 +1,52 @@
 /* Base styles are reset in ./reset.css */
-
 /* Set CSS variables to reuse throughout website */
 :root{
   --theme-accent: #218AFF; /* Primary accent / font colour */
   --theme-bg-color: rgb(16,16,16); /* Primary background colour */
   --theme-bg-color-secondary: rgb(32,32,32); /* Secondary background colour */
+  --theme-body-font-color :#fff;
   --container-width: 100%;/* Global default width for containers */
-  --container-width-medium:75%;
+  --container-width-medium: 75%;
   --container-width-desktop: 960px;/* Global default width for containers */
 }
 
 /* Adds smooth scrolling for anchor links */
 html {
-	scroll-behavior: smooth;
+	scroll-behavior: smooth; /* Makes sure scrolling is smooth */
 }
 
 /* Set body styles */
 body {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  line-height: 1.5;
-  background-color: var(--theme-bg-color);
-  color:#fff;
-  width:var(--container-width);
-  margin:0 auto;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Setting font to whole body */
+  line-height: 1.5; /* Line height to 1.5x */
+  background-color: var(--theme-bg-color); /* Background colour */
+  color: var(--theme-body-font-color); /* set whole body colour to white */
+  width: var(--container-width); /* Set width of body */
+  margin: 0 auto; /* Centre contents of body to middle of page */
+  min-width:320px; /* Restricts a min width to avoid web page collapse beyond unsupported lower resolutions */
 }
 
 /* Default link style */
 a {
-  color:#fff;
+  color: #fff; /* set font colour */
   text-decoration: none; /* Removes underline from links */
 }
+
+/* Class for turning html element into display:flex */
+.flex {
+  display: flex;
+}
 /* Main container for website */
-.flex-container {
-  display:flex; /* Set display to flexbox */
+.container {
   flex-direction: column; /* Sets column layout */
 }
 
 /* Header styling */
 #heading-section {
-  display:flex; /* Set display to flexbox */
+  flex-direction: column;
   justify-content: space-between; /* Flex items evenly distributed (but first item pegged to start, last to end */
-  width:100%; /* Fixed width */
-  margin:0 auto;/* Position the header center within parent container  */
+  width: 100%; /* Fixed width */
+  margin: 0 auto; /* Position the header center within parent container  */
   align-items: center; /* Flex items are aligned center */
   background-color: var(--theme-bg-color-secondary)
 
@@ -49,7 +54,6 @@ a {
 
 /* Navigation menu styling */
 #navigation {
-	display: flex;
 	justify-content: space-between; /* Position flex items horizontally */
 	align-items: center; /* Position flex items vertically */
 }
@@ -60,105 +64,116 @@ a {
 	flex-grow: 1;
 	text-align: center;
 }
-
+/* Navigation pseudo class applied for hover state */
 #navigation li:hover{
-  background-color:var(--theme-accent)
+  background-color: var(--theme-accent); /* Set background colour of li element */
 }
 
+/* Set a(link) properties of nav li items */
 #navigation li a {
-  display:block;
-  padding: 1em 0;
+  display: block; /* Set display mode to block */
+  padding: 1em 0; /* Apply top/bottom padding only  */
 }
 
+/* Targetting multiple elements (logo * nav elements) */
 .logo, nav {
-  flex:1
+  flex: 1; /* Shorthand to set flex-grow 1, flex-shrink 1 & flex basis 0*/
+  width: 100%; /* Set width to 100% to fill horizontal space */
 }
 
+/* Setting logo properties */
 .logo {
-	background-image: url("../images/logo.png");
-	background-repeat: no-repeat;
-	background-size: contain;
-	padding: 30px 0 0 92px;
+	background-image: url("../images/logo.png"); /* Set a background image */
+	background-repeat: no-repeat; /* Make sure background does not repeat */
+	background-size: contain; /* Rezize the background image to fit within the visible space */
+	padding: 30px 0 0 92px; /* target top & left padding shorthand */
 }
 
+/* Stylising the hero section of the website */
 #hero-section {
-  width:100%; /* Fixed width */
-  height:300px;
-  margin:30px auto; /* Position the header center within parent container  */
-  background-image: url("../images/hero-banner.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: relative
+  width: 100%; /* Set width to 100% to fill horizontal space */
+  height: 300px; /* Set fixed height of element */
+  margin: 30px auto; /* Position the header center within parent container  */
+  background-image: url("../images/hero-banner.png"); /* Set a background image */
+  background-repeat: no-repeat; /* Make sure background does not repeat */
+  background-size: contain; /* Rezize the background image to fit within the visible space */
+  position: relative /* Set element position to relative so child element has point of reference */
 }
-
+/* Target the direct child p element  */
 #hero-section > p {
-	position: absolute;
-	bottom: 1em;
-	right: 0;
-	display: block;
-	background-color: var(--theme-accent);
-	padding: 15px 5px 14px 30px;
-	font-size: 1.4em;
+	display: block; /* Set display mode to block */
+	position: absolute; /* Set element to absolute to position freely*/
+	bottom: 1em; /* Anchor element to bottom and apply space from bottom */
+	right: 0; /* Anchor element to right*/
+	background-color: var(--theme-accent); /* Sets background colour using variable */
+	padding: 15px 5px 14px 30px; /* Shortand custom padding */
+	font-size: 1.4em; /* set font size using em - apply font size relative to current / parent font size */
 }
 
+/* Applying default styles to about, portfolio & contact sections */
 #about-section, #portfolio-section, #contact-section {
-	display: flex;
-  flex-direction: column;
-	width: 100%;
-	margin: 0 auto;
-	margin-bottom: 30px;
-	border-top: 8px solid var(--theme-accent);
-  background-color: var(--theme-bg-color-secondary);
+  flex-direction: column; /* Set the flexbox direction to dispaly in columns */
+	width: 100%; /* Set width to 100% to fill horizontal space */
+	margin: 0 auto; /* Position the header center within parent container  */
+	margin-bottom: 30px; /* Set a bottom margin */
+	border-top: 8px solid var(--theme-accent); /* Only apply a top border */
+  background-color: var(--theme-bg-color-secondary); /* Sets background colour using variable */
 }
 
+/* Section title formatting*/
 .section-title {
-	font-size: 30px;
-  width:70%;
-  background-color:var(--theme-accent);
-  margin:1em 0;
-  text-indent: 10px;
+	font-size: 30px; /* Set fixed font size based on pixels*/
+  width:70%; /* set width of element */
+  background-color:var(--theme-accent); /* Sets background colour using variable */
+  margin:0.5em 0; /* Shorthand margin applied to top & bottom only */
+  text-indent: 10px; /* Applies a text indent to text within the element  */
 }
 
+/* About me section paragraph*/
 .about-card-description p{
-  line-height: 1em;
-  margin-bottom: 1em;
-  padding:0 20px
+  line-height: 1em; /* Set line height to same size as font */
+  margin-bottom: 1em; /* Sets a bottom margin */
+  padding:0 20px /* Shorthand apply margin to left & right side only */
 }
 
+/* Portfolio items container */
 #portfolio-items {
-	width: var(--container-width);
-	margin: 0 auto;  
-  display:grid;
-  grid-template-columns: 1fr 1fr ;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-template-areas: 
-    "portfolio-item1 portfolio-item1"
-    "portfolio-item1 portfolio-item1"
-    "portfolio-item2 portfolio-item3"
-    "portfolio-item4 portfolio-item5";
+	width: var(--container-width);/* set width of element using variable */
+	margin: 0 auto;  /* Position the header center within parent container  */
+  display: grid; /* Sets display mode to grid */
+  grid-template-columns: 1fr ; /* Specifying the width & number of columns */
+  grid-template-rows: 1fr;/* Specifying the height & number of rows */
+  grid-template-areas: /* Defining the grid areas we want to use*/
+    "portfolio-item1"
+    "portfolio-item2"
+    "portfolio-item3"
+    "portfolio-item4"
+    "portfolio-item5";
   gap:1em
 }
 
+/* Set property for portfolio items */
 .portfolio-item {
-  min-height:200px;
-  background-size:contain;
-  position: relative;
+  min-height: 200px; /* sets a min height for the element */
+  background-size: contain; /* Rezize the background image to fit within the visible space */
+  position: relative;  /* Set element position to relative so child element has point of reference */
 }
 
+/* Portfolio image */
 .portfolio-item img {
-  max-width:100%;
-  opacity: 0.7;
-  height:100%;
-  transition: all 0.2s ease-in-out;
+  max-width: 100%; /* Set's the maximum width of the image to fit the space */
+  opacity: 0.7; /* Set opacity to set element transparency */
+  height: 100%; /* Stretch image  to full height of the parent container*/
+  transition: all 0.2s ease-in-out; /* Enable CSS animation on image*/
 }
-
+/* Portfolio image - pseudo class applied for hover state */
 .portfolio-item:hover img {
-  opacity: 1;
+  opacity: 1; /* Set opacity of element */
 }
 
+/* Assign html elements to grid-template-area */
 .portfolio-item1 {
   grid-area: portfolio-item1;
-
 }
 .portfolio-item2 {
   grid-area: portfolio-item2;
@@ -172,100 +187,104 @@ a {
 .portfolio-item5 {
   grid-area: portfolio-item5;
 }
-
-.portfolio-item:nth-child(n+2) .portfolio-info {
-  width:75%
-}
+/* Porfolio info box */
 .portfolio-info {
-	position: absolute;
-	background-color: var(--theme-bg-color);
-	bottom: 2em;
-	right: 0;
-	text-align: right;
-	width: 50%;
-	color: #fff;
-	padding: 20px;
-	opacity: 0.96;
+	position: absolute; /* Freely position the element within parent */
+	background-color: var(--theme-bg-color); /* Sets background colour using variable */
+	bottom: 2em; /* Anchor element to bottom and apply space from bottom */
+	right: 0; /* Anchor element to right*/
+	text-align: right; /* Align text the right */
+	width: 50%; /* Set width of element */
+	padding: 20px;/* Apply padding to all 4 sides*/
+	opacity: 0.96; /* Set opacity of element */
   border: 3px solid var(--theme-accent);
-  border-right:none
+  border-right:none /* Remove the border from the right */
 }
 
+/* Portfolio heading  */
 .portfolio-info h3 {
-  font-size:1.3em;
+  font-size:1.3em; /* set font size using em - apply font size relative to current / parent font size */
 }
 
+/* Contact section */
 #contact-section .contact-details{
-  display:flex;
-  justify-content: space-around;
-  flex:1;
-  align-items:center
+  flex-direction: column; /* Set the flexbox direction to dispaly in columns */
+  justify-content: space-around; /* Flexbox justify content */
+  padding: 0 20px; /* Shorthand apply padding to left & right side only */
 }
 
-
-.about-card-description,#portfolio-items,.contact-details {
-  flex: 1
+/*Target multiple elements*/
+.about-card-description,
+#portfolio-items,
+.contact-details {
+  flex: 1; /* Shorthand to set flex-grow 1, flex-shrink 1 & flex basis 0*/
 }
 
+/* Footer Area */
 #contact-section a {
-  color: var(--theme-accent)
+  color: var(--theme-accent); /* Set font colour of link element to use variable */
 }
 
+/* Navigation pseudo class applied for hover state */
 #contact-section a:hover {
-  text-decoration: underline;
+  text-decoration: underline; /* Applies underline effect to text */
 }
 
 /* CSS Media Query */
 /* Target medium / tablet displays */
 @media screen and (min-width:768px) {
   body {
-    width:var(--container-width-medium);
+    width:var(--container-width-medium); /* Set width of body */
   }
 
+  #heading-section {
+    flex-direction: row; /* Set flex box direction */
+}
+
   #about-section, #portfolio-section, #contact-section {
-    flex-direction: row;
-    margin-top: 30px;
-    padding: 34px 20px 34px 0;
+    flex-direction: row; /* Set flex box direction */
+    margin-top: 30px; /* Top margin */
+    padding: 34px 20px 34px 0; /* Shorthand apply padding all 4 sides */
   }  
 
   .section-title {
-    font-size:30px;
-    width:140px;
-    text-align: right;
-    line-height: 1em;
-    padding: 0 15px;
-    border-right: 2px solid var(--theme-accent);
-    margin-right: 20px;
-    background-color: initial;
+    width:140px; /* Set width of element */
+    text-align: right; /* Align the text to the right */
+    line-height: 1em; /* Set line height to same size as font */
+    padding: 0 15px; /* Shorthand apply margin to left & right side only */
+    border-right: 2px solid var(--theme-accent); /* Set right border */
+    margin-right: 20px; /* Set right margin */
+    background-color: initial; /* Resets the background colour to default */
     margin:0
   }
 
+  #portfolio-items {
+    grid-template-columns: 1fr 1fr ; /* Specifying the width & number of columns */
+    grid-template-rows: 1fr 1fr 1fr 1fr; /* Specifying the height & number of rows */
+    grid-template-areas: /* Defining the grid areas we want to use 2 columns / 4 rows*/
+      "portfolio-item1 portfolio-item1"
+      "portfolio-item1 portfolio-item1"
+      "portfolio-item2 portfolio-item3"
+      "portfolio-item4 portfolio-item5";
+  }
+  #contact-section .contact-details{
+    flex-direction: row; /* Set flex box direction */
+    align-items:center; /* Flex items are aligned center */
+  }
 
+  /*nth selector to target everything after the first element*/
+  .portfolio-item:nth-child(n+2) .portfolio-info {
+    width:75%; /* Set width */
+  }  
 }
 
 /* Target large / desktop displays */
 @media screen and (min-width:992px) {
   body {
-    width:var(--container-width-desktop);
+    width:var(--container-width-desktop); /* Set width of body */
   }
-
-  #portfolio-items {
-    grid-template-columns: 1fr 1fr ;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
-      "portfolio-item1 portfolio-item1"
-      "portfolio-item1 portfolio-item1"
-      "portfolio-item2 portfolio-item3"
-      "portfolio-item4 portfolio-item5";
-  }  
-
   .section-title {
-    font-size: 60px;
-    text-align: right;
-    line-height: 1em;
-    padding: 0 15px;
-    border-right: 2px solid var(--theme-accent);
-    margin-right: 20px;
-    width: 254px;
+    font-size: 60px; /* Fixed font size in pixels */
+    width: 254px; /* Set width */
   }
-}  
 }
